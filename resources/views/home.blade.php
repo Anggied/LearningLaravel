@@ -7,6 +7,7 @@
 
     <div class="row mt-4 ">
         @foreach($blogs as $blogs)
+        @if($blogs['Status'] == 1)
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
@@ -15,6 +16,17 @@
                 </div>
             </div>
         </div>
+        @else
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2>{{ $blogs['Title'] }}</h2>
+                    <p>{{ $blogs['Body'] }}</p>
+                    <div class="btn-sm btn-warning " >pending</div>
+                </div>
+            </div>
+        </div>
+        @endif
         @endforeach
 
     </div>
